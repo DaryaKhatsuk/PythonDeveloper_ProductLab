@@ -1,8 +1,11 @@
 Тестовое задание на позицию Python Developer
 
 Инструкция по установке и запуску проекта:
-1. В https://github.com/DaryaKhatsuk/PythonDeveloper_ProductLab.git
-2. git clone 
+1. Скопировать адрес репозитория: https://github.com/DaryaKhatsuk/PythonDeveloper_ProductLab.git
+2. Клонировать в терминал интерпретатора с помощью: 
+git clone https://github.com/DaryaKhatsuk/PythonDeveloper_ProductLab.git
+3. Использовать в терминале команду pip install -r requirements.txt для загрузки импортов из файла requirements.txt
+4. Часть №1 задания реализована в файле [user_links.py](). 
 
 Часть №1
 Дан массив связей пользователей. Вам необходимо реализовать функцию,
