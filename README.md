@@ -2,10 +2,25 @@
 
 Инструкция по установке и запуску проекта:
 1. Скопировать адрес репозитория: https://github.com/DaryaKhatsuk/PythonDeveloper_ProductLab.git
-2. Клонировать в терминал интерпретатора с помощью: 
+2. Запустить Terminal c консолью Command Prompt(cmd)
+3. Клонировать проект с помощью: 
 git clone https://github.com/DaryaKhatsuk/PythonDeveloper_ProductLab.git
-3. Использовать в терминале команду pip install -r requirements.txt для загрузки импортов из файла requirements.txt
-4. Часть №1 задания реализована в файле [user_links.py](). 
+4. Использовать в команду pip install -r requirements.txt для загрузки импортов из файла requirements.txt
+5. Часть №1 задания реализована в файле 
+[user_links.py](https://github.com/DaryaKhatsuk/PythonDeveloper_ProductLab/blob/master/user_links.py). 
+Для его запуска откройте данный файл и нажмите сочетание клавиш Shift + F10.
+6. Для запуска части №2 задания нужно:
+   1. Перейти в папку с проектом: cd ParsingWildberries
+   2. В файле settings.py, убедитесь что у вас подключены актуальные DATABASES. 
+   В проекте подключен PostgreSQL.
+   3. В терминале проведите и зарегистрируйте миграции при помощи: 
+   
+   python manage.py makemigrations 
+   
+   python manage.py migrate
+   4. Создайте суперпользователя командой: python manage.py createsuperuser
+   5. Запустите сервер командой: python manage.py runserver
+
 
 Часть №1
 Дан массив связей пользователей. Вам необходимо реализовать функцию,
