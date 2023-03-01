@@ -18,18 +18,10 @@ git clone https://github.com/DaryaKhatsuk/PythonDeveloper_ProductLab.git
    python manage.py makemigrations 
    
    python manage.py migrate
+   
    4. Создайте суперпользователя командой: python manage.py createsuperuser
    5. Запустите сервер командой: python manage.py runserver
-
-
-Часть №1
-Дан массив связей пользователей. Вам необходимо реализовать функцию,
-которая принимает на вход три аргумента: информация о связях, как кортеж (tuple)
-кортежей, первое имя (str), второе имя (str). Функция должна возвращать True, если
-связь между любыми двумя заданными пользователями существует, например, если у
-двух пользователей есть общие друзья или у их друзей есть общие друзья и т.д., иначе
-False.
-
+   
 Часть №2
 1. Изначально необходимо отследить трафик с www.wildberries.ru и найти HTTP
 запрос, который в JSON формате присылает данные о бренде и название
@@ -46,4 +38,3 @@ https://www.wildberries.ru/catalog/73512949/detail.aspx
 названии артикула в JSON формате. Пример: информация об одном артикуле -
 {"article": 123, "brand": "brand", "title": "Title"}; артикулы из файла - [{"article": 1,
 "brand": "Brand1", "title": "Title1"}, {"article": 2, "brand": "Brand2", "title": "Title2"}]
-
