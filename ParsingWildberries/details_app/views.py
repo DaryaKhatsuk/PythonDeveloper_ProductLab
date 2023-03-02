@@ -8,6 +8,10 @@ from .details_parsing import get_product_info
 from .forms import ProductForm
 
 
+async def async_product_info(article):
+    await get_product_info(article)
+
+
 def product_info(request):
     if request.method == 'POST':
         wild_pars = ProductForm(request.POST)
@@ -16,12 +20,9 @@ def product_info(request):
         if not article.isdigit() and re.findall(r'(.xlsx)$', article):
             try:
                 loc = article
-                print(loc)
                 my_wb = openpyxl.load_workbook(loc)
                 sheets = my_wb.active
-                print(sheets)
                 for sheet in sheets['A']:
-                    print('sheet', sheet.value)
                     index_list.append(sheet.value)
             except Exception as ex:
                 print(f'Some {ex} here.')
@@ -31,8 +32,7 @@ def product_info(request):
         else:
             return redirect('error')
         loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        loop.run_until_complete(get_product_info(index_list))
+        loop.run_until_complete(async_product_info(index_list))
         loop.close()
 
     context = {
