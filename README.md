@@ -3,47 +3,26 @@
 Инструкция по установке и запуску проекта:
 1. Скопировать адрес репозитория: https://github.com/DaryaKhatsuk/PythonDeveloper_ProductLab.git
 2. Запустить Terminal c консолью Command Prompt(cmd)
-3. Клонировать проект с помощью: 
-git clone https://github.com/DaryaKhatsuk/PythonDeveloper_ProductLab.git
+3. Клонировать проект с помощью: git clone https://github.com/DaryaKhatsuk/PythonDeveloper_ProductLab.git
 4. Использовать в команду pip install -r requirements.txt для загрузки импортов из файла requirements.txt
 5. Часть №1 задания реализована в файле 
 [user_links.py](https://github.com/DaryaKhatsuk/PythonDeveloper_ProductLab/blob/master/user_links.py). 
 Для его запуска откройте данный файл и нажмите сочетание клавиш Shift + F10.
 6. Для запуска части №2 задания нужно:
    1. Перейти в папку с проектом: cd ParsingWildberries
-   2. В файле settings.py, убедитесь что у вас подключены актуальные DATABASES. 
-   В проекте подключен PostgreSQL.
+   2. В файле 
+   [settings.py](https://github.com/DaryaKhatsuk/PythonDeveloper_ProductLab/blob/master/ParsingWildberries/ParsingWildberries/settings.py), 
+   подключите актуальные DATABASES. В проекте подключен PostgreSQL
    3. В терминале проведите и зарегистрируйте миграции при помощи: 
    
    python manage.py makemigrations 
    
    python manage.py migrate
-   4. Создайте суперпользователя командой: python manage.py createsuperuser
-   5. Запустите сервер командой: python manage.py runserver
-
-
-Часть №1
-Дан массив связей пользователей. Вам необходимо реализовать функцию,
-которая принимает на вход три аргумента: информация о связях, как кортеж (tuple)
-кортежей, первое имя (str), второе имя (str). Функция должна возвращать True, если
-связь между любыми двумя заданными пользователями существует, например, если у
-двух пользователей есть общие друзья или у их друзей есть общие друзья и т.д., иначе
-False.
-
-Часть №2
-1. Изначально необходимо отследить трафик с www.wildberries.ru и найти HTTP
-запрос, который в JSON формате присылает данные о бренде и название
-артикула. Пример страницы товара:
-https://www.wildberries.ru/catalog/73512949/detail.aspx
-2. Далее необходимо реализовать API принимающее файл формата xlsx с
-артикулами (артикулы должны вводиться построчно в первой колонке) или
-один артикул (не в файле, а исключительно одно значение). В API должно быть
-два инпута: файл или одно значение, передаваться должно что-то одно.
-3. API должно асинхронно взаимодействовать с найденным HTTP запросом в
-первом пункте и получать данные о карточке товара. Из полученных данных
-необходимо сделать PyDantic объект.
-4. Успешным результатом работы API является возврат данных о бренде и
-названии артикула в JSON формате. Пример: информация об одном артикуле -
-{"article": 123, "brand": "brand", "title": "Title"}; артикулы из файла - [{"article": 1,
-"brand": "Brand1", "title": "Title1"}, {"article": 2, "brand": "Brand2", "title": "Title2"}]
-
+   4. Создайте суперпользователя командой: python manage.py createsuperuser. Действие в данном случае не обязательно.
+   5. В файле 
+   [details_parsing.py](https://github.com/DaryaKhatsuk/PythonDeveloper_ProductLab/blob/master/ParsingWildberries/details_app/details_parsing.py)
+   для парсинга используется браузер Chrome, убедитесь что он установлен на вашем устройстве, а в строке service указан 
+   актуальный путь к файлу chromedriver.exe
+   6. Запустите сервер командой: python manage.py runserver. Перейдя адресу http://127.0.0.1:8000/ следуйте указаниям 
+   при вводе данных. Согласно условию задания "Из полученных данных необходимо сделать PyDantic объект.", его вывод 
+   будет в вашем терминале после завершения работы программы, в противном случае вы увидите ошибку в браузере.
