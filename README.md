@@ -18,6 +18,7 @@
    python manage.py makemigrations 
    
    python manage.py migrate
+   
    4. Создайте суперпользователя командой: python manage.py createsuperuser. Действие в данном случае не обязательно.
    5. В файле 
    [details_parsing.py](https://github.com/DaryaKhatsuk/PythonDeveloper_ProductLab/blob/master/ParsingWildberries/details_app/details_parsing.py)
