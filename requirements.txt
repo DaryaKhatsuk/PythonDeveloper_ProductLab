@@ -14,7 +14,7 @@ multidict==6.0.4
 openpyxl==3.1.1
 psycopg2==2.9.5
 pydantic==1.10.5
-sqlparse==0.4.3
+sqlparse==0.4.4
 structlog==20.2.0
 typing_extensions==4.5.0
 tzdata==2022.7
